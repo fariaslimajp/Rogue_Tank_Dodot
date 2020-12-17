@@ -1,0 +1,104 @@
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://scripts/bullet.gd" type="Script" id=1]
+[ext_resource path="res://sprites/explosionSmoke5.png" type="Texture" id=2]
+[ext_resource path="res://sprites/explosionSmoke4.png" type="Texture" id=3]
+[ext_resource path="res://sprites/explosionSmoke2.png" type="Texture" id=4]
+[ext_resource path="res://sprites/bulletGreen1_outline.png" type="Texture" id=5]
+[ext_resource path="res://sprites/explosionSmoke3.png" type="Texture" id=6]
+[ext_resource path="res://sprites/smokeWhite1.png" type="Texture" id=7]
+[ext_resource path="res://sprites/explosion1.png" type="Texture" id=8]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0, 0.303704, 0.992593, 1 )
+colors = PoolColorArray( 1, 0.811765, 0.733333, 0.490196, 1, 0.996078, 0.941176, 0.294118, 1, 1, 1, 0, 1, 0.964505, 0.911133, 1 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="Curve" id=3]
+_data = [ Vector2( 0, 0.457955 ), 0.0, 0.0323769, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=4]
+curve = SubResource( 3 )
+
+[sub_resource type="ParticlesMaterial" id=5]
+flag_disable_z = true
+gravity = Vector3( 0, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 0.1
+scale_random = 0.15
+scale_curve = SubResource( 4 )
+color_ramp = SubResource( 2 )
+
+[sub_resource type="CapsuleShape2D" id=6]
+radius = 4.0
+height = 6.0
+
+[sub_resource type="Animation" id=7]
+resource_name = "explode"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("self_destruction:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 8 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 3 ), ExtResource( 2 ), null ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("self_destruction:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 10.0, 0.0 ]
+}
+
+[node name="bullet" type="Area2D"]
+collision_layer = 8
+collision_mask = 53
+script = ExtResource( 1 )
+
+[node name="smoke" type="Particles2D" parent="."]
+position = Vector2( -7, 4.76837e-07 )
+scale = Vector2( 0.1, 0.1 )
+amount = 20
+lifetime = 0.4
+speed_scale = 3.0
+visibility_rect = Rect2( -100, -100, 10, 10 )
+local_coords = false
+process_material = SubResource( 5 )
+texture = ExtResource( 7 )
+
+[node name="shape" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource( 6 )
+
+[node name="notifier" type="VisibilityNotifier2D" parent="." groups=[
+"cannon_bullets",
+]]
+rotation = 1.5708
+rect = Rect2( -5, -8, 10, 16 )
+
+[node name="sprite" type="Sprite" parent="."]
+rotation = 1.5708
+texture = ExtResource( 5 )
+
+[node name="self_destruction" type="Sprite" parent="."]
+scale = Vector2( 0.4, 0.4 )
+
+[node name="anim_self_destruction" type="AnimationPlayer" parent="."]
+anims/explode = SubResource( 7 )
+[connection signal="area_entered" from="." to="." method="_on_bullet_area_entered"]
+[connection signal="body_entered" from="." to="." method="_on_bullet_body_entered"]
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

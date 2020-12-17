@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://sprites/crateMetal_side.png" type="Texture" id=1]
+[ext_resource path="res://scripts/generic_scripts/destructible.gd" type="Script" id=2]
+[ext_resource path="res://scripts/generic_scripts/object_live.gd" type="Script" id=3]
+
+
+[node name="crateMetal_side" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="shape" type="CollisionPolygon2D" parent="."]
+position = Vector2( -318, -502 )
+polygon = PoolVector2Array( 318, 488, 332, 493, 332, 511, 318, 516, 304, 511, 304, 493 )
+
+[node name="area_obstacle" type="Area2D" parent="."]
+script = ExtResource( 2 )
+health = 50
+
+[node name="shape" type="CollisionPolygon2D" parent="area_obstacle"]
+position = Vector2( -318, -502 )
+polygon = PoolVector2Array( 318, 487, 333, 493, 333, 511, 318, 517, 303, 511, 303, 493 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

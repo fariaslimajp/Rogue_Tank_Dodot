@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/barricadeWood.png" type="Texture" id=1]
+
+[node name="barricadeWood" type="StaticBody2D"]
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="poli" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -14, -9, -11, -5, -14, 0, -10, 4, -15, 9, -9, 15, -6, 12, -1, 14, 6, 13, 10, 15, 15, 8, 12, 4, 11, -4, 15, -8, 9, -15, 6, -12, -6, -12, -10, -14 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )

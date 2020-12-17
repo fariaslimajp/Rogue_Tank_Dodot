@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://sprites/barricadeMetal.png" type="Texture" id=1]
+
+[node name="barricadeMetal" type="StaticBody2D"]
+collision_mask = 0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="poli" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( -9, -15, 0, -6, 9, -15, 15, -9, 6, 0, 15, 9, 9, 15, 0, 6, -9, 15, -15, 9, -6, 0, -15, -9 )
+
+[node name="sprite" type="Sprite" parent="."]
+texture = ExtResource( 1 )
