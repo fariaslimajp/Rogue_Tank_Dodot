@@ -2,8 +2,8 @@ tool
 extends KinematicBody2D
 
 var BULLET_TANK_GROUP = "bullet-"+ str(self)
-const ROT_VEL = PI / 2  #PI = 180 graus
-const MAX_SPEED = 150
+const ROT_VEL = PI / 1.7  #PI = 180 graus
+const MAX_SPEED = 120
 
 var acell = 0
 var joystick_mode = false

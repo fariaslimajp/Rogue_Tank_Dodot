@@ -11,55 +11,95 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 128, 128 )
 
 [node name="tile2" type="Sprite" parent="."]
-position = Vector2( 0, 128 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 0, 128, 128, 128 )
-
-[node name="tile3" type="Sprite" parent="."]
 position = Vector2( 0, 256 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 0, 256, 128, 128 )
 
-[node name="tile5" type="Sprite" parent="."]
+[node name="tile3" type="Sprite" parent="."]
 position = Vector2( 128, 384 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 128, 384, 128, 128 )
 
-[node name="body" type="StaticBody2D" parent="tile5"]
-position = Vector2( 0, -128 )
+[node name="body" type="StaticBody2D" parent="tile3"]
+collision_mask = 0
 
-[node name="colisionpoly" type="CollisionPolygon2D" parent="tile5/body"]
-position = Vector2( 0, -9 )
+[node name="colisionpoly" type="CollisionPolygon2D" parent="tile3/body"]
+position = Vector2( 0, -137 )
 polygon = PoolVector2Array( 104, 137, 104, 147, 108, 155, 117, 161, 128, 161, 128, 169, 114, 169, 102, 161, 96, 149, 96, 137 )
 
-[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile5/body"]
-position = Vector2( 0, -9 )
-polygon = PoolVector2Array( 32, 137, 32, 150, 35, 171, 14, 170, 0, 170, 0, 162, 25, 162, 24, 137 )
+[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile3/body"]
+position = Vector2( 0, -137 )
+polygon = PoolVector2Array( 32, 137, 32, 150, 35, 171, 16, 169, 0, 169, 0, 161, 24, 161, 24, 137 )
 
-[node name="colisionpoly4" type="CollisionPolygon2D" parent="tile5/body"]
-position = Vector2( 128, 393 )
+[node name="colisionpoly4" type="CollisionPolygon2D" parent="tile3/body"]
+position = Vector2( 128, 265 )
 rotation = 3.14159
-polygon = PoolVector2Array( 32, 137, 32, 150, 35, 171, 14, 170, 0, 170, 0, 162, 25, 162, 24, 137 )
+polygon = PoolVector2Array( 32, 137, 32, 150, 35, 171, 15.9996, 169, -0.000427246, 169, -0.000411987, 161, 23.9996, 161, 24, 137 )
 
-[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile5/body"]
-position = Vector2( 128, 393 )
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile3/body"]
+position = Vector2( 128, 265 )
 rotation = 3.14159
 polygon = PoolVector2Array( 104, 137, 104, 147, 108, 155, 117, 161, 128, 161, 128, 169, 114, 169, 102, 161, 96, 149, 96, 137 )
 
-[node name="tile6" type="Sprite" parent="."]
+[node name="tile4" type="Sprite" parent="."]
 position = Vector2( 128, 256 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 128, 256, 128, 128 )
 
+[node name="body" type="StaticBody2D" parent="tile4"]
+collision_mask = 0
+
+[node name="colisionpoly" type="CollisionPolygon2D" parent="tile4/body"]
+position = Vector2( 0, -9 )
+polygon = PoolVector2Array( 24, 9, 24, 137, 32, 137, 32, 9 )
+
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile4/body"]
+position = Vector2( 72, 0 )
+polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
+
+[node name="tile5" type="Sprite" parent="."]
+position = Vector2( 128, 128 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 128, 128, 128 )
+
+[node name="body" type="StaticBody2D" parent="tile5"]
+collision_mask = 0
+
+[node name="colisionpoly" type="CollisionPolygon2D" parent="tile5/body"]
+position = Vector2( 0, -137 )
+polygon = PoolVector2Array( 104, 137, 104, 147, 108, 155, 117, 161, 128, 161, 128, 169, 114, 169, 102, 161, 96, 149, 96, 137 )
+
+[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile5/body"]
+position = Vector2( 0, -137 )
+polygon = PoolVector2Array( 32, 137, 32, 150, 35, 171, 16, 169, 0, 169, 0, 161, 24, 161, 24, 137 )
+
+[node name="colisionpoly4" type="CollisionPolygon2D" parent="tile5/body"]
+position = Vector2( 128, 265 )
+rotation = 3.14159
+polygon = PoolVector2Array( 32, 137, 32, 150, 35, 171, 15.9996, 169, -0.000427246, 169, -0.000396729, 161, 25, 162, 24, 137 )
+
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile5/body"]
+position = Vector2( 128, 265 )
+rotation = 3.14159
+polygon = PoolVector2Array( 104, 137, 104, 147, 108, 155, 117, 161, 128, 161, 128, 169, 114, 169, 102, 161, 96, 149, 96, 137 )
+
+[node name="tile6" type="Sprite" parent="."]
+position = Vector2( 128, 0 )
+texture = ExtResource( 1 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 0, 128, 128 )
+
 [node name="body" type="StaticBody2D" parent="tile6"]
+collision_mask = 0
 
 [node name="colisionpoly" type="CollisionPolygon2D" parent="tile6/body"]
 position = Vector2( 0, -9 )
@@ -70,147 +110,186 @@ position = Vector2( 72, 0 )
 polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
 
 [node name="tile7" type="Sprite" parent="."]
-position = Vector2( 128, 128 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 128, 128, 128, 128 )
-
-[node name="body" type="StaticBody2D" parent="tile7"]
-position = Vector2( 0, -128 )
-
-[node name="colisionpoly" type="CollisionPolygon2D" parent="tile7/body"]
-position = Vector2( 0, -9 )
-polygon = PoolVector2Array( 104, 137, 104, 147, 108, 155, 117, 161, 128, 161, 128, 169, 114, 169, 102, 161, 96, 149, 96, 137 )
-
-[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile7/body"]
-position = Vector2( 0, -9 )
-polygon = PoolVector2Array( 32, 137, 32, 150, 35, 171, 14, 170, 0, 170, 0, 162, 25, 162, 24, 137 )
-
-[node name="colisionpoly4" type="CollisionPolygon2D" parent="tile7/body"]
-position = Vector2( 128, 393 )
-rotation = 3.14159
-polygon = PoolVector2Array( 32, 137, 32, 150, 35, 171, 14, 170, 0, 170, 0, 162, 25, 162, 24, 137 )
-
-[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile7/body"]
-position = Vector2( 128, 393 )
-rotation = 3.14159
-polygon = PoolVector2Array( 104, 137, 104, 147, 108, 155, 117, 161, 128, 161, 128, 169, 114, 169, 102, 161, 96, 149, 96, 137 )
-
-[node name="tile8" type="Sprite" parent="."]
-position = Vector2( 128, 0 )
-texture = ExtResource( 1 )
-centered = false
-region_enabled = true
-region_rect = Rect2( 128, 0, 128, 128 )
-
-[node name="body" type="StaticBody2D" parent="tile8"]
-
-[node name="colisionpoly" type="CollisionPolygon2D" parent="tile8/body"]
-position = Vector2( 0, -9 )
-polygon = PoolVector2Array( 24, 9, 24, 137, 32, 137, 32, 9 )
-
-[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile8/body"]
-position = Vector2( 72, 0 )
-polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
-
-[node name="tile10" type="Sprite" parent="."]
 position = Vector2( 256, 128 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 256, 128, 128, 128 )
 
-[node name="tile12" type="Sprite" parent="."]
+[node name="body2" type="StaticBody2D" parent="tile7"]
+collision_mask = 0
+
+[node name="colisionpoly" type="CollisionPolygon2D" parent="tile7/body2"]
+position = Vector2( -128, -9 )
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 33, 232, 33, 232, 9 )
+
+[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile7/body2"]
+position = Vector2( -9, 256 )
+rotation = -1.5708
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 33, 232, 33, 232, 9 )
+
+[node name="colisionpoly4" type="CollisionPolygon2D" parent="tile7/body2"]
+position = Vector2( 256, 137 )
+rotation = -3.14159
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 33, 232, 33, 232, 9 )
+
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile7/body2"]
+position = Vector2( 137, -128 )
+rotation = 1.5708
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 32.9991, 232, 32.9991, 232, 9 )
+
+[node name="tile8" type="Sprite" parent="."]
 position = Vector2( 256, 256 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 256, 384, 128, 128 )
 
-[node name="tile13" type="Sprite" parent="."]
-position = Vector2( 384, 512 )
-rotation = 3.14159
+[node name="body" type="StaticBody2D" parent="tile8"]
+collision_mask = 0
+
+[node name="colisionpoly" type="CollisionPolygon2D" parent="tile8/body"]
+position = Vector2( -128, -9 )
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 33, 232, 33, 232, 9 )
+
+[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile8/body"]
+position = Vector2( -9, 256 )
+rotation = -1.5708
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 33, 232, 33, 232, 9 )
+
+[node name="colisionpoly4" type="CollisionPolygon2D" parent="tile8/body"]
+position = Vector2( 256, 137 )
+rotation = -3.14159
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 33, 232, 33, 232, 9 )
+
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile8/body"]
+position = Vector2( 137, -128 )
+rotation = 1.5708
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 32.9991, 232, 32.9991, 232, 9 )
+
+[node name="tile9" type="Sprite" parent="."]
+position = Vector2( 256, 384 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 384, 384, 128, 128 )
 
-[node name="tile15" type="Sprite" parent="."]
-position = Vector2( 512, 128 )
-rotation = 1.5708
+[node name="body" type="StaticBody2D" parent="tile9"]
+collision_mask = 0
+
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile9/body"]
+position = Vector2( 0, -9.00006 )
+polygon = PoolVector2Array( 128.263, 105.056, 120.001, 105, 106.001, 109, 96.0014, 124, 96.0014, 137, 104.001, 137, 104.001, 127, 110.001, 118, 119.001, 113, 128.001, 113 )
+
+[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile9/body"]
+position = Vector2( 0, -9.00006 )
+polygon = PoolVector2Array( 32.0014, 137, 32.0014, 124, 34.0013, 103, 42.0012, 82.9999, 60.0011, 59.9998, 81.0011, 48.9997, 94.0011, 43.9997, 109.001, 40.9996, 128.001, 40.9996, 128.001, 32.9996, 109.001, 32.9996, 90.001, 36.9997, 68.0011, 44.9998, 51.0011, 57.9998, 34.0012, 79.9999, 26.0013, 107, 24.0014, 124, 24.0014, 137 )
+
+[node name="tile10" type="Sprite" parent="."]
+position = Vector2( 384, 128 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 384, 128, 128, 128 )
 
-[node name="tile16" type="Sprite" parent="."]
+[node name="body" type="StaticBody2D" parent="tile10"]
+collision_mask = 0
+
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile10/body"]
+position = Vector2( -0.000457764, -10.0009 )
+polygon = PoolVector2Array( 128.263, 105.056, 120.001, 105, 106.001, 109, 96.0014, 124, 96.0029, 138, 104.003, 138, 104.001, 127, 110.001, 118, 119.001, 113, 128.001, 113 )
+
+[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile10/body"]
+position = Vector2( -0.000457764, -10.0009 )
+polygon = PoolVector2Array( 32.0029, 138, 32.0014, 124, 34.0013, 103, 42.0012, 82.9999, 60.0011, 59.9998, 81.0011, 48.9997, 94.0011, 43.9997, 109.001, 40.9996, 128.001, 40.9996, 128.001, 32.9996, 109.001, 32.9996, 90.001, 36.9997, 68.0011, 44.9998, 51.0011, 57.9998, 34.0012, 79.9999, 26.0013, 107, 24.0014, 124, 24.0029, 138 )
+
+[node name="tile11" type="Sprite" parent="."]
 position = Vector2( 256, 0 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 384, 0, 128, 128 )
 
-[node name="body" type="StaticBody2D" parent="tile16"]
-position = Vector2( -128, 0 )
+[node name="body" type="StaticBody2D" parent="tile11"]
+collision_mask = 0
 
-[node name="colisionpoly" type="CollisionPolygon2D" parent="tile16/body"]
-position = Vector2( 0, -9 )
-polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 34, 232, 34, 232, 9 )
+[node name="colisionpoly" type="CollisionPolygon2D" parent="tile11/body"]
+position = Vector2( -128, -9 )
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 33, 232, 33, 232, 9 )
 
-[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile16/body"]
-position = Vector2( 265, -128 )
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile11/body"]
+position = Vector2( 137, -128 )
 rotation = 1.5708
-polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 34, 232, 34, 232, 9 )
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 32.9991, 232, 32.9992, 232, 9 )
 
-[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile16/body"]
-position = Vector2( 265, -128 )
+[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile11/body"]
+position = Vector2( 137, -128 )
 rotation = 1.5708
 polygon = PoolVector2Array( 128, 105, 256, 105, 256, 113, 128, 113 )
 
-[node name="tile22" type="Sprite" parent="."]
-position = Vector2( 512, 256 )
-rotation = 1.5708
+[node name="tile12" type="Sprite" parent="."]
+position = Vector2( 384, 256 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 640, 256, 128, 128 )
 
-[node name="body" type="StaticBody2D" parent="tile22"]
-position = Vector2( 3.05176e-05, 256 )
-rotation = -1.5708
+[node name="body" type="StaticBody2D" parent="tile12"]
+collision_mask = 0
 
-[node name="colisionpoly" type="CollisionPolygon2D" parent="tile22/body"]
-position = Vector2( 0, -9 )
-polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 34, 232, 34, 232, 9 )
+[node name="colisionpoly" type="CollisionPolygon2D" parent="tile12/body"]
+position = Vector2( -128, -9.00092 )
+polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 33.0009, 232, 33.0009, 232, 9 )
 
-[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile22/body"]
-position = Vector2( 265, -128 )
-rotation = 1.5708
-polygon = PoolVector2Array( 224, 9, 224, 36, 228, 41, 256, 41, 256, 34, 232, 34, 232, 9 )
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile12/body"]
+position = Vector2( -128, -9.00092 )
+polygon = PoolVector2Array( 160, 9.00092, 160, 35.0009, 156, 41.0009, 128, 41.0009, 128, 33.0009, 152, 33.0009, 152, 9.00092 )
 
-[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile22/body"]
-position = Vector2( 265, -128 )
-rotation = 1.5708
-polygon = PoolVector2Array( 128, 105, 256, 105, 256, 113, 128, 113 )
+[node name="colisionpoly3" type="CollisionPolygon2D" parent="tile12/body"]
+position = Vector2( -128, -9.00092 )
+polygon = PoolVector2Array( 128, 105.001, 128, 113.001, 256, 113.001, 256, 105.001 )
 
-[node name="tile29" type="Sprite" parent="."]
+[node name="tile13" type="Sprite" parent="."]
 position = Vector2( 384, 384 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 896, 384, 128, 128 )
 
-[node name="tile32" type="Sprite" parent="."]
+[node name="body2" type="StaticBody2D" parent="tile13"]
+collision_mask = 0
+
+[node name="colisionpoly" type="CollisionPolygon2D" parent="tile13/body2"]
+position = Vector2( 0, -9 )
+polygon = PoolVector2Array( 24, 9, 24, 137, 32, 137, 32, 9 )
+
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile13/body2"]
+position = Vector2( 72, 0 )
+polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
+
+[node name="tile14" type="Sprite" parent="."]
 position = Vector2( 0, 384 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 896, 0, 128, 128 )
 
-[node name="tile40" type="Sprite" parent="."]
+[node name="tile15" type="Sprite" parent="."]
 position = Vector2( 0, 128 )
 texture = ExtResource( 1 )
 centered = false
 region_enabled = true
 region_rect = Rect2( 1152, 0, 128, 128 )
+
+[node name="body" type="StaticBody2D" parent="tile15"]
+collision_mask = 0
+
+[node name="colisionpoly" type="CollisionPolygon2D" parent="tile15/body"]
+position = Vector2( 137, 0 )
+rotation = 1.5708
+polygon = PoolVector2Array( 24, 9, 24, 137, 32, 137, 32, 9 )
+
+[node name="colisionpoly2" type="CollisionPolygon2D" parent="tile15/body"]
+position = Vector2( 128, 72 )
+rotation = 1.5708
+polygon = PoolVector2Array( 24, 0, 24, 128, 32, 128, 32, 0 )
