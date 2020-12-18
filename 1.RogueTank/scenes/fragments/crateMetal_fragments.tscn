@@ -1,0 +1,370 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://sprites/crateMetal.png" type="Texture" id=1]
+[ext_resource path="res://animation/fragmentsexplode.tres" type="Animation" id=2]
+[ext_resource path="res://scripts/generic_scripts/fragments.gd" type="Script" id=3]
+[ext_resource path="res://scripts/generic_scripts/fragments_parent.gd" type="Script" id=4]
+
+[node name="crateMetal_fragments" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="fragments" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 7, 0, 5, 4, 2, 6 )
+uv = PoolVector2Array( -0.0178986, 0.27037, 4.88781, 0.194901, 4.88781, 3.96852, 1.79344, 5.77986 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments"]
+polygon = PoolVector2Array( 0, 0, 7, 0, 5, 4, 2, 6 )
+
+[node name="fragments2" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments2"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 7, 0, 5, 4, 6, 6, 11, 6, 11, 3, 9, 4, 11, 1, 9, 1, 9, 0 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments2"]
+polygon = PoolVector2Array( 7, 0, 5, 4, 6, 6, 11, 6, 11, 3, 9, 4, 11, 1, 9, 1, 9, 0 )
+
+[node name="fragments3" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments3"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 0, 2, 6, 5, 4, 6, 6, 4, 7, 2, 7, 0, 7 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments3"]
+polygon = PoolVector2Array( 0, 0, 2, 6, 5, 4, 6, 6, 4, 7, 2, 7, 0, 7 )
+
+[node name="fragments4" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments4"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 9, 0, 9, 1, 11, 1, 9, 4, 11, 3, 11, 6, 10, 7, 12, 8, 15, 7, 15, 4, 13, 3, 15, 2, 12, 0 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments4"]
+polygon = PoolVector2Array( 9, 0, 9, 1, 11, 1, 9, 4, 11, 3, 11, 6, 10, 7, 12, 8, 15, 7, 15, 4, 13, 3, 15, 2, 12, 0 )
+
+[node name="fragments5" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments5"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 12, 0, 15, 2, 19, 3, 15, 3, 13, 3, 15, 4, 15, 7, 18, 7, 21, 6, 22, 7, 24, 5, 22, 5, 24, 2, 21, 1, 17, 0 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments5"]
+polygon = PoolVector2Array( 12, 0, 15, 2, 19, 3, 15, 3, 13, 3, 15, 4, 15, 7, 18, 7, 21, 6, 22, 7, 24, 5, 22, 5, 24, 2, 21, 1, 17, 0 )
+
+[node name="fragments6" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments6"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 15, 2, 13, 3, 19, 3 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments6"]
+polygon = PoolVector2Array( 15, 2, 13, 3, 19, 3 )
+
+[node name="fragments7" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments7"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 17, 0, 28, 0, 28, 2, 26, 4, 26, 2, 24, 2 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments7"]
+polygon = PoolVector2Array( 17, 0, 28, 0, 28, 2, 26, 4, 26, 2, 24, 2 )
+
+[node name="fragments8" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments8"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 28, 2, 28, 7, 25, 8, 26, 7, 22, 7, 24, 5, 22, 5, 24, 2, 26, 2, 26, 4 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments8"]
+polygon = PoolVector2Array( 28, 2, 28, 7, 25, 8, 26, 7, 22, 7, 24, 5, 22, 5, 24, 2, 26, 2, 26, 4 )
+
+[node name="fragments9" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments9"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 7, 4, 7, 6, 6, 11, 6, 10, 7, 12, 8, 9, 11, 9, 9, 6, 11, 6, 8, 4, 9, 1, 8, 0, 9 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments9"]
+polygon = PoolVector2Array( 0, 7, 4, 7, 6, 6, 11, 6, 10, 7, 12, 8, 9, 11, 9, 9, 6, 11, 6, 8, 4, 9, 1, 8, 0, 9 )
+
+[node name="fragments10" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments10"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 9, 9, 9, 11, 10, 11, 10, 13, 8, 12, 6, 11 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments10"]
+polygon = PoolVector2Array( 9, 9, 9, 11, 10, 11, 10, 13, 8, 12, 6, 11 )
+
+[node name="fragments11" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments11"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 9, 1, 8, 4, 9, 6, 8, 6, 11, 9, 13, 4, 16, 5, 12, 1, 14, 2, 11 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments11"]
+polygon = PoolVector2Array( 0, 9, 1, 8, 4, 9, 6, 8, 6, 11, 9, 13, 4, 16, 5, 12, 1, 14, 2, 11 )
+
+[node name="fragments12" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments12"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 9, 2, 11, 1, 14, 5, 12, 4, 16, 0, 16 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments12"]
+polygon = PoolVector2Array( 0, 9, 2, 11, 1, 14, 5, 12, 4, 16, 0, 16 )
+
+[node name="fragments13" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments13"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 9, 11, 12, 8, 14, 10, 17, 9, 18, 11, 13, 12, 14, 15, 12, 15, 12, 12, 10, 11 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments13"]
+polygon = PoolVector2Array( 9, 11, 12, 8, 14, 10, 17, 9, 18, 11, 13, 12, 14, 15, 12, 15, 12, 12, 10, 11 )
+
+[node name="fragments14" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments14"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 16, 0, 20, 3, 18, 3, 23, 0, 23, 3, 24, 5, 21, 8, 19, 4, 18, 6, 17, 4, 16 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments14"]
+polygon = PoolVector2Array( 0, 16, 0, 20, 3, 18, 3, 23, 0, 23, 3, 24, 5, 21, 8, 19, 4, 18, 6, 17, 4, 16 )
+
+[node name="fragments15" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments15"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 20, 3, 18, 3, 23, 0, 23 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments15"]
+polygon = PoolVector2Array( 0, 20, 3, 18, 3, 23, 0, 23 )
+
+[node name="fragments16" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments16"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 12, 8, 15, 7, 18, 7, 19, 10, 22, 11, 20, 14, 20, 13, 17, 13, 18, 11, 17, 9, 14, 10 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments16"]
+polygon = PoolVector2Array( 12, 8, 15, 7, 18, 7, 19, 10, 22, 11, 20, 14, 20, 13, 17, 13, 18, 11, 17, 9, 14, 10 )
+
+[node name="fragments17" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments17"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 18, 7, 21, 6, 22, 7, 26, 7, 25, 8, 28, 7, 28, 11, 26, 10, 25, 12, 22, 11, 19, 10 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments17"]
+polygon = PoolVector2Array( 18, 7, 21, 6, 22, 7, 26, 7, 25, 8, 28, 7, 28, 11, 26, 10, 25, 12, 22, 11, 19, 10 )
+
+[node name="fragments18" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments18"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 10, 11, 10, 13, 6, 11, 9, 13, 4, 16, 6, 17, 7, 17, 11, 15, 11, 13, 12, 12 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments18"]
+polygon = PoolVector2Array( 10, 11, 10, 13, 6, 11, 9, 13, 4, 16, 6, 17, 7, 17, 11, 15, 11, 13, 12, 12 )
+
+[node name="fragments19" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments19"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 12, 12, 12, 15, 14, 15, 14, 17, 12, 19, 10, 18, 9, 16, 11, 15, 11, 13 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments19"]
+polygon = PoolVector2Array( 12, 12, 12, 15, 14, 15, 14, 17, 12, 19, 10, 18, 9, 16, 11, 15, 11, 13 )
+
+[node name="fragments20" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments20"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 4, 18, 6, 17, 7, 17, 9, 16, 10, 18, 12, 19, 11, 21, 8, 20, 8, 19 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments20"]
+polygon = PoolVector2Array( 4, 18, 6, 17, 7, 17, 9, 16, 10, 18, 12, 19, 11, 21, 8, 20, 8, 19 )
+
+[node name="fragments21" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments21"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 23, 3, 24, 5, 21, 8, 19, 8, 20, 11, 21, 13, 24, 8, 23, 7, 25, 1, 26 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments21"]
+polygon = PoolVector2Array( 0, 23, 3, 24, 5, 21, 8, 19, 8, 20, 11, 21, 13, 24, 8, 23, 7, 25, 1, 26 )
+
+[node name="fragments22" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments22"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 0, 23, 0, 28, 9, 28, 9, 25, 8, 23, 7, 25, 1, 26 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments22"]
+polygon = PoolVector2Array( 0, 23, 0, 28, 9, 28, 9, 25, 8, 23, 7, 25, 1, 26 )
+
+[node name="fragments23" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments23"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 8, 23, 13, 24, 11, 21, 12, 19, 16, 20, 16, 22, 18, 24, 17, 26, 15, 28, 12, 26, 10, 28, 9, 28, 9, 25 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments23"]
+polygon = PoolVector2Array( 8, 23, 13, 24, 11, 21, 12, 19, 16, 20, 16, 22, 18, 24, 17, 26, 15, 28, 12, 26, 10, 28, 9, 28, 9, 25 )
+
+[node name="fragments24" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments24"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 12, 26, 15, 28, 10, 28 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments24"]
+polygon = PoolVector2Array( 12, 26, 15, 28, 10, 28 )
+
+[node name="fragments25" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments25"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 13, 12, 18, 11, 17, 13, 20, 13, 20, 17, 18, 17, 16, 20, 12, 19, 14, 17, 14, 15 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments25"]
+polygon = PoolVector2Array( 13, 12, 18, 11, 17, 13, 20, 13, 20, 17, 18, 17, 16, 20, 12, 19, 14, 17, 14, 15 )
+
+[node name="fragments26" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments26"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 28, 11, 26, 10, 25, 12, 22, 11, 20, 14, 20, 17, 23, 19, 24, 15, 26, 17, 27, 13, 28, 13 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments26"]
+polygon = PoolVector2Array( 28, 11, 26, 10, 25, 12, 22, 11, 20, 14, 20, 17, 23, 19, 24, 15, 26, 17, 27, 13, 28, 13 )
+
+[node name="fragments27" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments27"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 28, 13, 27, 13, 26, 17, 24, 15, 23, 19, 25, 21, 28, 21 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments27"]
+polygon = PoolVector2Array( 28, 13, 27, 13, 26, 17, 24, 15, 23, 19, 25, 21, 28, 21 )
+
+[node name="fragments28" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments28"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 18, 17, 20, 17, 23, 19, 22, 21, 19, 20, 18, 24, 16, 22, 16, 20 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments28"]
+polygon = PoolVector2Array( 18, 17, 20, 17, 23, 19, 22, 21, 19, 20, 18, 24, 16, 22, 16, 20 )
+
+[node name="fragments29" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments29"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 23, 19, 22, 21, 19, 20, 18, 24, 21, 25, 24, 24, 25, 21 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments29"]
+polygon = PoolVector2Array( 23, 19, 22, 21, 19, 20, 18, 24, 21, 25, 24, 24, 25, 21 )
+
+[node name="fragments30" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments30"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 28, 21, 25, 21, 24, 24, 21, 25, 21, 26, 24, 27, 27, 26, 28, 25 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments30"]
+polygon = PoolVector2Array( 28, 21, 25, 21, 24, 24, 21, 25, 21, 26, 24, 27, 27, 26, 28, 25 )
+
+[node name="fragments31" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments31"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 28, 25, 27, 26, 24, 27, 23, 28, 28, 28 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments31"]
+polygon = PoolVector2Array( 28, 25, 27, 26, 24, 27, 23, 28, 28, 28 )
+
+[node name="fragments32" type="RigidBody2D" parent="."]
+collision_layer = 0
+script = ExtResource( 3 )
+
+[node name="poly" type="Polygon2D" parent="fragments32"]
+texture = ExtResource( 1 )
+polygon = PoolVector2Array( 18, 24, 21, 25, 21, 26, 24, 27, 23, 28, 15, 28, 17, 26 )
+
+[node name="collision_poly" type="CollisionPolygon2D" parent="fragments32"]
+polygon = PoolVector2Array( 18, 24, 21, 25, 21, 26, 24, 27, 23, 28, 15, 28, 17, 26 )
+
+[node name="anim" type="AnimationPlayer" parent="."]
+autoplay = "fragmentsexplode"
+anims/fragmentsexplode = ExtResource( 2 )
+
+[node name="sprite_explosion" type="Sprite" parent="."]
+rotation = 3.14159
+scale = Vector2( 1.3, 1.3 )

@@ -47,10 +47,13 @@ limit_left = 0
 limit_top = -256
 limit_right = 2176
 limit_bottom = 1408
+drag_margin_h_enabled = true
+drag_margin_v_enabled = true
 smoothing_enabled = true
-drag_margin_left = 0.4
+smoothing_speed = 3.0
+drag_margin_left = 0.3
 drag_margin_top = 0.3
-drag_margin_right = 0.4
+drag_margin_right = 0.3
 drag_margin_bottom = 0.3
 
 [node name="Obstacle" type="Node" parent="."]
@@ -100,7 +103,7 @@ position = Vector2( 1121.91, 1115.46 )
 rotation = -0.523599
 
 [node name="crateMetal" parent="Obstacle" instance=ExtResource( 15 )]
-position = Vector2( 1156.06, 480.431 )
+position = Vector2( 229.531, 193.433 )
 
 [node name="crateMetal_side" parent="Obstacle" instance=ExtResource( 17 )]
 position = Vector2( 1276.06, 623.431 )

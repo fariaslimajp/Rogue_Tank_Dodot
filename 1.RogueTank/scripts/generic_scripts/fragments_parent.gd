@@ -13,5 +13,4 @@ func on_fragment_tree_exited():
 	bodies -=1
 	print (bodies)
 	if bodies <= 0:
-		print("deletando")
 		queue_free()

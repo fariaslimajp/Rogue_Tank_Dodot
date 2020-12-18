@@ -16,7 +16,6 @@ func _ready():
 func on_self_sleeping_state_changed():
 	var timer = get_tree().create_timer(randf() * 10 + 2)
 	yield(timer, "timeout")
-	
 	var tween = Tween.new()
 	add_child(tween)
 	tween.interpolate_method(self, "fade", Color(1,1,1,1), Color(1,1,1,0) ,2,Tween.TRANS_LINEAR,Tween.EASE_OUT,0)
