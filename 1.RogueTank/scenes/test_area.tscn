@@ -86,7 +86,7 @@ position = Vector2( 1060.06, 432.431 )
 position = Vector2( 1240.06, 200.431 )
 
 [node name="barrelRed_top" parent="Obstacle" instance=ExtResource( 9 )]
-position = Vector2( 556.057, 377.431 )
+position = Vector2( 176, 224 )
 
 [node name="barrelRust_top" parent="Obstacle" instance=ExtResource( 10 )]
 position = Vector2( 1012.06, 628.431 )

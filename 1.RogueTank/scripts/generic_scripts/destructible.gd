@@ -14,5 +14,4 @@ func hit (damage, node):
 	health -= damage
 	emit_signal("hitted", damage, health, node)
 	if health <= 0:
-		$"../".queue_free()
 		emit_signal("destroyed")

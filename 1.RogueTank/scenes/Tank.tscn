@@ -159,7 +159,7 @@ anims/fire = SubResource( 9 )
 
 [node name="sight" type="Node2D" parent="barrel"]
 position = Vector2( 300, 0 )
-rotation = 2.3562
+rotation = 3.1416
 script = ExtResource( 9 )
 
 [node name="time_reload" type="Timer" parent="barrel"]
