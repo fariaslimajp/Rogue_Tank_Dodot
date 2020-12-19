@@ -2,8 +2,10 @@ extends Area2D
 
 export var health = int()
 
+signal big_hit
+signal destroyed
 signal hitted(damage, health, node)
-signal destroyed()
+signal small_hit
 
 func _ready():
 	if health == 0:
@@ -15,3 +17,7 @@ func hit (damage, node):
 	emit_signal("hitted", damage, health, node)
 	if health <= 0:
 		emit_signal("destroyed")
+	if damage >= 15:
+		emit_signal("big_hit")
+	else:
+		emit_signal("small_hit")

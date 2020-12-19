@@ -13,10 +13,12 @@ var move
 var pre_bullet = preload("res://scenes/bullets/bullet.tscn")
 var pre_mg_bullet = preload("res://scenes/bullets/mg_bullet.tscn")
 var pre_track = preload("res://scenes/track.tscn")
-
 var travell = 0
 var vel_mod = 1
 
+#LISTA DE SINAIS
+signal cannon_bullet
+signal hm_bullet
 
 export(int, "Blue_barrel1", "Blue_barrel2", "Blue_barrel3", "Dark_barrel1", "Dark_barrel2", "Dark_barrel3", "Green_barrel1", "Green_barrel2", "Green_barrel3", "Red_barrel1", "Red_barrel2", "Red_barrel3", "Sand_barrel1", "Sand_barrel2", "Sand_barrel3") var barrel = 0 setget set_barrel
 export(int, "Blue", "Dark", "Green", "Red", "Sand", "DarkLarge", "BigRed", "Huge") var bodie = 0 setget set_bodie
@@ -176,6 +178,7 @@ func cannon_shoot():
 		loaded = false
 		$barrel/sight.update()
 		$barrel/time_reload.start()
+		emit_signal("cannon_bullet")
 
 func mg_shoot():
 	var mg_bullet = pre_mg_bullet.instance()
@@ -183,6 +186,7 @@ func mg_shoot():
 	mg_bullet.global_rotation = $mg/muzzle.global_rotation
 	mg_bullet.dir = Vector2(cos($mg.global_rotation), sin($mg.global_rotation)).normalized()
 	get_parent().add_child(mg_bullet)
+	emit_signal("hm_bullet")
 
 func set_bodie(val):
 	bodie = val

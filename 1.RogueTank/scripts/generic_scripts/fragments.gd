@@ -11,9 +11,10 @@ func _ready():
 	apply_impulse(Vector2(),Vector2(cos(dir), sin(dir)) * 200) 
 	$poly.scale = get_parent().scale
 	$collision_poly.scale = get_parent().scale
-	connect("sleeping_state_changed", self,"on_self_sleeping_state_changed")
+# warning-ignore:return_value_discarded
+	connect("sleeping_state_changed", self,"_on_self_sleeping_state_changed")
 	
-func on_self_sleeping_state_changed():
+func _on_self_sleeping_state_changed():
 	var timer = get_tree().create_timer(randf() * 10 + 2)
 	yield(timer, "timeout")
 	var tween = Tween.new()

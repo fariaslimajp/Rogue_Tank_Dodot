@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://sprites/barrelRed_top.png" type="Texture" id=1]
 [ext_resource path="res://scripts/obstacles/barrelRed.gd" type="Script" id=2]
@@ -6,6 +6,8 @@
 [ext_resource path="res://animation/small_hit_circle.tres" type="Animation" id=4]
 [ext_resource path="res://animation/big_hit.tres" type="Animation" id=5]
 [ext_resource path="res://animation/barrel_red_top_explode.tres" type="Animation" id=6]
+[ext_resource path="res://samples/metal_hit.wav" type="AudioStream" id=7]
+[ext_resource path="res://samples/metal_barrel_hit.wav" type="AudioStream" id=8]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 12.0
@@ -38,3 +40,13 @@ playback_speed = 2.0
 anims/big_hit = ExtResource( 5 )
 anims/explode = ExtResource( 6 )
 anims/small_hit = ExtResource( 4 )
+
+[node name="sample" type="Node" parent="."]
+
+[node name="big_hit" type="AudioStreamPlayer2D" parent="sample"]
+stream = ExtResource( 8 )
+volume_db = 1.0
+
+[node name="small_hit" type="AudioStreamPlayer2D" parent="sample"]
+stream = ExtResource( 7 )
+volume_db = -4.0
