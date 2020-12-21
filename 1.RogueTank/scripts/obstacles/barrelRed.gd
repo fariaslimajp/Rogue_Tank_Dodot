@@ -1,15 +1,13 @@
 extends StaticBody2D
 
 var PRE_OIL = preload("res://scenes/oilSpill_large.tscn")
+var hit_sound = "small_hit01"
 
 func _ready():
-# warning-ignore:return_value_discarded
 	$area_obstacle.connect("destroyed", self, "on_area_destroyed")
-# warning-ignore:return_value_discarded
-	$area_obstacle.connect("hitted", self, "on_area_hitted")
 	$area_obstacle.connect("big_hit", self, "on_area_big_hit")
 	$area_obstacle.connect("small_hit", self, "on_area_small_hit")
-
+	randomize()
 
 func on_area_destroyed():
 	var oil_count = 5
@@ -21,25 +19,25 @@ func on_area_destroyed():
 		get_parent().call_deferred("add_child", oil)
 		oil.get_node("anim").play("scale")
 		oil.z_index = z_index - 1
-
 	$anim.play("explode")
 	get_node("area_obstacle").set_deferred("monitorable", false)
 	get_node("area_obstacle").set_deferred("monitoring", false)
+	if has_node("sample"):
+		$sample/explosion.play()
 	yield($anim,"animation_finished")
 	queue_free()
 
-# warning-ignore:unused_argument
-# warning-ignore:unused_argument
-func on_area_hitted(damage, health, body):
-	if self.has_node("anim"):
-		pass
 
 func on_area_small_hit():
-	$anim.play("small_hit")
+	if self.has_node("anim"):
+		$anim.play("small_hit")
 	if self.has_node("sample"):
-		$sample/small_hit.play()
+		print (hit_sound)
+		hit_sound = "small_hit0" +str(randi() % 5 + 1)
+		get_node("sample/"+str(hit_sound)).play()
 		
 func on_area_big_hit():
-	$anim.play("big_hit")
+	if self.has_node("anim"):
+		$anim.play("big_hit")
 	if self.has_node("sample"):
 		$sample/big_hit.play()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://sprites/tankBody_blue.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Tank.gd" type="Script" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://samples/tank_cannon.wav" type="AudioStream" id=11]
 [ext_resource path="res://samples/reload.wav" type="AudioStream" id=12]
 [ext_resource path="res://samples/disparo_hmg_tank.wav" type="AudioStream" id=13]
+[ext_resource path="res://samples/tank_motor.wav" type="AudioStream" id=14]
 
 [sub_resource type="Gradient" id=1]
 offsets = PoolRealArray( 0, 0.437037 )
@@ -119,6 +120,7 @@ script/source = "extends Node
 func _ready():
 	get_parent().connect(\"cannon_bullet\",self,\"_on_tank_cannon_bullet\")
 	get_parent().connect(\"hm_bullet\",self, \"_on_tank_hm_bullet\")
+	$motor.play()
 
 func _on_tank_cannon_bullet():
 	$cannon.play()
@@ -127,6 +129,11 @@ func _on_tank_cannon_bullet():
 
 func _on_tank_hm_bullet():
 	$heavy_mg.play()
+
+func _physics_process(delta):
+	var pitch = abs(get_parent().acell / get_parent().MAX_SPEED)
+	$motor.pitch_scale = pitch + 0.7
+	
 "
 
 [node name="Tank" type="KinematicBody2D"]
@@ -186,7 +193,7 @@ anims/fire = SubResource( 9 )
 
 [node name="sight" type="Node2D" parent="barrel"]
 position = Vector2( 300, 0 )
-rotation = 5.4978
+rotation = 6.2832
 script = ExtResource( 9 )
 
 [node name="time_reload" type="Timer" parent="barrel"]
@@ -219,7 +226,12 @@ bus = "Fx"
 
 [node name="heavy_mg" type="AudioStreamPlayer" parent="sample"]
 stream = ExtResource( 13 )
-volume_db = -4.0
+volume_db = -7.0
+bus = "Fx"
+
+[node name="motor" type="AudioStreamPlayer" parent="sample"]
+stream = ExtResource( 14 )
+volume_db = -5.0
 bus = "Fx"
 [connection signal="timeout" from="barrel/time_reload" to="." method="_on_time_reload_timeout"]
 [connection signal="timeout" from="mg/mg_timer" to="." method="_on_mg_timer_timeout"]

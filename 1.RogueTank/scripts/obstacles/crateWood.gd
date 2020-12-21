@@ -14,7 +14,15 @@ func on_area_destroyed():
 	fragments.scale = scale
 	fragments.rotation = rotation
 	$"../".call_deferred("add_child", fragments)
-	queue_free()
+	if has_node("sample"):
+		$sample/breaking.play()
+		get_node("area_obstacle").set_deferred("monitorable", false)
+		get_node("area_obstacle").set_deferred("monitoring", false)
+		$sprite.visible = false
+		yield($sample/breaking,"finished")
+		queue_free()
+	else:
+		queue_free()
 
 # warning-ignore:unused_argument
 # warning-ignore:unused_argument

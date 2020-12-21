@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://scenes/Tank.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/obstacle/barrelGreen_side.tscn" type="PackedScene" id=2]
@@ -20,6 +20,15 @@
 [ext_resource path="res://scenes/obstacle/treeGreen_large.tscn" type="PackedScene" id=18]
 [ext_resource path="res://scenes/oilSpill_large.tscn" type="PackedScene" id=19]
 [ext_resource path="res://resorses/Tileset.tres" type="TileSet" id=20]
+[ext_resource path="res://sprites/enemy/towerDefense_tile228.png" type="Texture" id=21]
+[ext_resource path="res://sprites/enemy/towerDefense_tile250.png" type="Texture" id=22]
+[ext_resource path="res://scripts/turret_01.gd" type="Script" id=23]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 22.561
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 150.0
 
 [node name="test_area" type="Node"]
 
@@ -59,40 +68,40 @@ drag_margin_bottom = 0.3
 [node name="Obstacle" type="Node" parent="."]
 
 [node name="crateWood" parent="Obstacle" instance=ExtResource( 8 )]
-position = Vector2( 781.27, 409.231 )
+position = Vector2( 135.195, 60.7537 )
 
 [node name="barrelBlack_side" parent="Obstacle" instance=ExtResource( 6 )]
-position = Vector2( 248.057, 366.431 )
+position = Vector2( 209.893, 244.083 )
 
 [node name="barrelGreen_side" parent="Obstacle" instance=ExtResource( 2 )]
-position = Vector2( 807.057, 167.431 )
+position = Vector2( 171.743, 288.657 )
 
 [node name="barrelRed_side" parent="Obstacle" instance=ExtResource( 3 )]
-position = Vector2( 887.057, 427.431 )
+position = Vector2( 172.049, 332.022 )
 
 [node name="barricadeMetal" parent="Obstacle" instance=ExtResource( 4 )]
-position = Vector2( 419.057, 165.431 )
+position = Vector2( 210.279, 127.267 )
 
 [node name="barricadeWood" parent="Obstacle" instance=ExtResource( 5 )]
-position = Vector2( 999.057, 181.431 )
+position = Vector2( 172.925, 125.308 )
 
 [node name="barrelRust_side" parent="Obstacle" instance=ExtResource( 7 )]
-position = Vector2( 472.057, 542.431 )
+position = Vector2( 210.523, 291 )
 
 [node name="barrelBlack_top" parent="Obstacle" instance=ExtResource( 14 )]
-position = Vector2( 1060.06, 432.431 )
+position = Vector2( 210.356, 333.654 )
 
 [node name="barrelGreen_top" parent="Obstacle" instance=ExtResource( 13 )]
-position = Vector2( 1240.06, 200.431 )
+position = Vector2( 251.171, 292.473 )
 
 [node name="barrelRed_top" parent="Obstacle" instance=ExtResource( 9 )]
-position = Vector2( 176, 224 )
+position = Vector2( 169.265, 244.204 )
 
 [node name="barrelRust_top" parent="Obstacle" instance=ExtResource( 10 )]
-position = Vector2( 1012.06, 628.431 )
+position = Vector2( 253.276, 334.346 )
 
 [node name="fenceRed" parent="Obstacle" instance=ExtResource( 11 )]
-position = Vector2( 898.057, 656.431 )
+position = Vector2( 313.254, 255.712 )
 
 [node name="fenceYellow" parent="Obstacle" instance=ExtResource( 12 )]
 position = Vector2( 1069.58, 1123.94 )
@@ -103,13 +112,13 @@ position = Vector2( 1121.91, 1115.46 )
 rotation = -0.523599
 
 [node name="crateMetal" parent="Obstacle" instance=ExtResource( 15 )]
-position = Vector2( 229.531, 193.433 )
+position = Vector2( 478.718, 173.229 )
 
 [node name="crateMetal_side" parent="Obstacle" instance=ExtResource( 17 )]
-position = Vector2( 1276.06, 623.431 )
+position = Vector2( 428.724, 218.222 )
 
 [node name="crateWood_side" parent="Obstacle" instance=ExtResource( 16 )]
-position = Vector2( 223.057, 651.431 )
+position = Vector2( 474.489, 217.038 )
 
 [node name="treeGreen_large" parent="Obstacle" instance=ExtResource( 18 )]
 position = Vector2( 541.057, 215.431 )
@@ -125,3 +134,36 @@ position = Vector2( 541.057, 148.431 )
 
 [node name="oilSpill_large" parent="." instance=ExtResource( 19 )]
 position = Vector2( 1365.31, 398.988 )
+
+[node name="turret_01" type="StaticBody2D" parent="."]
+position = Vector2( 321, 188 )
+collision_layer = 4
+collision_mask = 0
+script = ExtResource( 23 )
+
+[node name="Sprite" type="Sprite" parent="turret_01"]
+texture = ExtResource( 21 )
+
+[node name="poly" type="CollisionPolygon2D" parent="turret_01"]
+polygon = PoolVector2Array( -23, -18, -23, 8, -14, 18, 14, 18, 23, 8, 23, -18 )
+
+[node name="cannon" type="Area2D" parent="turret_01"]
+collision_layer = 4
+collision_mask = 0
+
+[node name="Sprite" type="Sprite" parent="turret_01/cannon"]
+texture = ExtResource( 22 )
+offset = Vector2( 0, -8 )
+region_rect = Rect2( 0, 0.019, 0, 0 )
+
+[node name="shape" type="CollisionShape2D" parent="turret_01/cannon"]
+shape = SubResource( 1 )
+
+[node name="sensor" type="Area2D" parent="turret_01"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="shape" type="CollisionShape2D" parent="turret_01/sensor"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="turret_01/sensor" to="turret_01" method="_on_sensor_body_entered"]
+[connection signal="body_exited" from="turret_01/sensor" to="turret_01" method="_on_sensor_body_exited"]
